@@ -17,6 +17,16 @@
     <header class="b-header">
       <div class="container">
         <div class="b-header__logo b-logo"><a href="#"><img src="img/b-logo.jpg"/></a></div>
+        <div class="b-header__slogan b-slogan"> <img src="img/b-slogan.png" class="b-slogan__image"/>
+          <p class="b-slogan__text">Только лучшие товары</p>
+        </div>
+        <ul class="b-header__menu b-menu">
+          <li class="b-menu__item"><a href="#" class="link">Преимущества</a></li>
+          <li class="b-menu__item"><a href="#" class="link">Оплата и доставка</a></li>
+          <li class="b-menu__item b-menu__item_order"><a href="#" class="btn btn_danger btn_size_s">Заказать</a></li>
+          <li class="b-menu__item"><a href="#" class="link">Наши товары</a></li>
+          <li class="b-menu__item"><a href="#" class="link">Отзывы</a></li>
+        </ul>
         <div class="b-header__contacts b-contacts">
           <div class="b-contacts__phone"><small>(814)</small> 875-35-89</div><a href="#" class="b-contacts__call btn btn_success btn_size_s">Заказать звонок</a>
         </div>
@@ -108,6 +118,27 @@
         </div>
       </div>
     </div>
+    <!-- ==== Promo ======================================================================-->
+    <div class="b-promo">
+      <div class="container">
+        <div class="b-promo__wrapper">
+          <form action="#" class="b-order-form b-promo__form">
+            <div class="b-order-form__heading heading_section">Закажи сейчас и получи скидку 5%</div>
+            <input type="text" name="name" placeholder="ФИО" class="form-input b-order-form__name"/>
+            <input type="text" name="phone" placeholder="Телефон" class="form-input b-order-form__phone"/>
+            <input type="text" name="article" placeholder="Артикул" class="form-input b-order-form__article"/>
+            <select name="size" class="form-select b-order-form__size">
+              <option value="s">S</option>
+            </select>
+            <button type="submit" class="btn btn_danger btn_size_m">Заказать</button>
+          </form>
+          <div class="b-promo__countdown b-countdown">
+            <div class="b-countdown__heading">До конца акции осталось:</div>
+            <div class="b-countdown__timer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- ==== Steps ======================================================================-->
     <div class="b-steps">
       <div class="container">
@@ -170,6 +201,7 @@
           </form>
           <div class="b-promo__countdown b-countdown">
             <div class="b-countdown__heading">До конца акции осталось:</div>
+            <div class="b-countdown__timer"></div>
           </div>
         </div>
       </div>
@@ -178,6 +210,16 @@
     <footer class="b-footer">
       <div class="container">
         <div class="b-footer__logo b-logo"><a href="#"><img src="img/b-logo.jpg"/></a></div>
+        <div class="b-footer__slogan b-slogan"> <img src="img/b-slogan.png" class="b-slogan__image"/>
+          <p class="b-slogan__text">Только лучшие товары</p>
+        </div>
+        <ul class="b-footer__menu b-menu">
+          <li class="b-menu__item"><a href="#" class="link">Преимущества</a></li>
+          <li class="b-menu__item"><a href="#" class="link">Оплата и доставка</a></li>
+          <li class="b-menu__item"><a href="#" class="link">Заказать</a></li>
+          <li class="b-menu__item"><a href="#" class="link">Наши товары</a></li>
+          <li class="b-menu__item"><a href="#" class="link">Отзывы</a></li>
+        </ul>
         <div class="b-footer__contacts b-contacts">
           <div class="b-contacts__phone"><small>(814)</small> 875-35-89</div><a href="#" class="b-contacts__call btn btn_success btn_size_s">Заказать звонок</a>
         </div>
@@ -188,9 +230,9 @@
     <script src="libs/jquery.placeholder/jquery.placeholder.min.js"></script>
     <script src="libs/jquery.inputmask/jquery.inputmask.bundle.min.js"></script>
     <script src="libs/jquery.fancybox/jquery.fancybox.pack.js"></script>
+    <script src="libs/jquery.countdown/jquery.plugin.min.js"></script>
     <script src="libs/jquery.countdown/jquery.countdown.min.js"></script>
     <script src="libs/jquery.countdown/jquery.countdown-ru.js"></script>
-    <script src="libs/jquery.countdown/jquery.plugin.min.js"></script>
     <script src="libs/respond/respond.min.js"></script>
     <script src="js/main.js"></script>
   </body>
