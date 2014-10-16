@@ -34,7 +34,24 @@
     </header>
     <!-- ==== Product slider =============================================================-->
     <div class="b-product-slider">
-      <div class="container"></div>
+      <ul class="b-product-slider__slides">
+        <li class="b-product-slider__item">
+          <div class="container">
+            <div class="b-product-slider__desc">
+              <div class="b-product-slider__desc__heading heading_section">Большой красивый <br/> заголовок товара</div>
+              <p class="b-product-slider__desc__text">
+                 
+                Наряду с этим, фирменный стиль исключитель<br/>но охватывает медиамикс,осознавая социальную <br/>ответственность бизнеса. 
+              </p>
+              <ul class="b-product-slider__params">
+                <li class="b-product-slider__params__item">Артикул: <strong>А522</strong></li>
+                <li class="b-product-slider__params__item">Материал: <strong>Хлопок</strong></li>
+                <li class="b-product-slider__params__item">Размеры: <strong>S, M, L, X, XL, XLL</strong></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
     <!-- ==== Benefits ===================================================================-->
     <div class="b-benefits">
@@ -61,6 +78,12 @@
       <div class="b-catalog__top">
         <div class="container">
           <div class="b-catalog__heading">Наши товары</div>
+          <ul class="b-catalog__filter">
+            <li class="b-catalog__filter__item active">Все товары</li>
+            <li class="b-catalog__filter__item">Мужские</li>
+            <li class="b-catalog__filter__item">Женские</li>
+            <li class="b-catalog__filter__item">Аксесуары</li>
+          </ul>
         </div>
       </div>
       <div class="b-catalog__products">
@@ -233,6 +256,7 @@
     <script src="libs/jquery.countdown/jquery.plugin.min.js"></script>
     <script src="libs/jquery.countdown/jquery.countdown.min.js"></script>
     <script src="libs/jquery.countdown/jquery.countdown-ru.js"></script>
+    <script src="libs/jquery.bxslider/jquery.bxslider.min.js"></script>
     <script src="libs/respond/respond.min.js"></script>
     <script src="js/main.js"></script>
   </body>
