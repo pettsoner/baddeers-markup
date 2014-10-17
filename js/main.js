@@ -12,5 +12,5 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('.b-product-slider__slides').bxSlider();
+    $('.b-product-slider__slides').cslider();
 });
