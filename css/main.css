@@ -498,29 +498,28 @@ a {
 }
 .b-product-slider__slides .da-arrows {
   position: absolute;
-  z-index: 2;
   top: 0;
-  left: 50%;
-  width: 960px;
+  left: 0;
   height: 100%;
-  margin-left: -480px;
-  z-index: 9999;
+  width: 100%;
 }
 .b-product-slider__slides .da-arrows span {
   position: absolute;
   top: 50%;
+  left: 50%;
   margin-top: -16px;
   width: 22px;
   height: 36px;
   background: url("../img/slider-arrows.png") no-repeat;
   cursor: pointer;
+  z-index: 999;
 }
 .b-product-slider__slides .da-arrows span.da-arrows-next {
-  right: -22px;
+  margin-left: 502px;
   background-position: -33px 0;
 }
 .b-product-slider__slides .da-arrows span.da-arrows-prev {
-  left: -22px;
+  margin-left: -502px;
 }
 .b-product-slider__slides .da-dots {
   position: absolute;
@@ -576,9 +575,6 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  -webkit-transform: translateX(1500px);
-  -ms-transform: translateX(1500px);
-  transform: translateX(1500px);
 }
 .b-product-slider__item__main {
   padding: 100px 0 0;
@@ -587,17 +583,25 @@ a {
   opacity: 0;
   max-width: 480px;
 }
+.b-product-slider__item__price,
+.b-product-slider__item__order {
+  display: inline-block;
+  vertical-align: -30%;
+}
 .b-product-slider__item__price {
   margin: 20px 0 0;
   color: #fff;
   font-size: 31px;
+}
+.b-product-slider__item__order {
+  margin-left: 20px;
+}
+.b-product-slider__item__image,
+.b-product-slider__item__price,
+.b-product-slider__item__order {
   -webkit-transform: translateX(1500px);
   -ms-transform: translateX(1500px);
   transform: translateX(1500px);
-}
-.b-product-slider__item__price .btn {
-  vertical-align: 30%;
-  margin-left: 20px;
 }
 .b-product-slider__item .container {
   position: relative;
@@ -622,6 +626,10 @@ a {
   -webkit-animation: sliderItemActiveSlide 1s ease-in-out 0.4s both;
   animation: sliderItemActiveSlide 1s ease-in-out 0.4s both;
 }
+.b-product-slider__item.active .b-product-slider__item__order {
+  -webkit-animation: sliderItemActiveSlide 1s ease-in-out 0.5s both;
+  animation: sliderItemActiveSlide 1s ease-in-out 0.5s both;
+}
 .b-product-slider__item.inactive .b-product-slider__item__bg {
   -webkit-animation: sliderItemInactiveBg 1.2s ease-in both;
   animation: sliderItemInactiveBg 1.2s ease-in both;
@@ -637,6 +645,10 @@ a {
 .b-product-slider__item.inactive .b-product-slider__item__price {
   -webkit-animation: sliderItemInactiveSlide 1s ease-in-out 0.2s both;
   animation: sliderItemInactiveSlide 1s ease-in-out 0.2s both;
+}
+.b-product-slider__item.inactive .b-product-slider__item__order {
+  -webkit-animation: sliderItemInactiveSlide 1s ease-in-out both;
+  animation: sliderItemInactiveSlide 1s ease-in-out both;
 }
 .b-product-slider__params__item {
   display: inline-block;
