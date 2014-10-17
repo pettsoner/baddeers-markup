@@ -513,6 +513,8 @@ a {
   background: url("../img/slider-arrows.png") no-repeat;
   cursor: pointer;
   z-index: 999;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
 }
 .b-product-slider__slides .da-arrows span.da-arrows-next {
   margin-left: 502px;
@@ -520,6 +522,11 @@ a {
 }
 .b-product-slider__slides .da-arrows span.da-arrows-prev {
   margin-left: -502px;
+}
+.b-product-slider__slides .da-arrows span:active {
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
 }
 .b-product-slider__slides .da-dots {
   position: absolute;
