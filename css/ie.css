@@ -1,0 +1,25 @@
+.b-product-slider__item {
+  display: none;
+}
+.b-product-slider__item__image,
+.b-product-slider__item__price,
+.b-product-slider__item__order {
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
+  transform: translate(0);
+}
+.b-product-slider__item.active {
+  display: block;
+}
+.b-product-slider__item.active .b-product-slider__item__bg,
+.b-product-slider__item.active .b-product-slider__item__main {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+}
+.b-product-slider__item.inactive .b-product-slider__item__bg,
+.b-product-slider__item.inactive .b-product-slider__item__main {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}

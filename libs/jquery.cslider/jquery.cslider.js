@@ -52,8 +52,8 @@
 			
 			this.bgpositer		= 0;
 			
-			this.cssAnimations	= true; //Modernizr.cssanimations;
-			this.cssTransitions	= true; //Modernizr.csstransitions;
+			this.cssAnimations	= Modernizr.cssanimations;
+			this.cssTransitions	= Modernizr.csstransitions;
 			
 			if( !this.cssAnimations || !this.cssAnimations ) {
 				
@@ -120,8 +120,15 @@
 			this.current	= page;
 			
 			$next			= this.$slides.eq( this.current );
+
+			$current.removeClass('active').addClass('inactive')
+			$next.removeClass('inactive').addClass('active');
+
+			if( !this.cssAnimations || !this.cssAnimations ) {
+				_self.isAnimating = false;
+			}
 			
-			if( this.cssAnimations && this.cssAnimations ) {
+			/*if( this.cssAnimations && this.cssAnimations ) {
 			
 				//var rmClasses	= 'active inactive';
 				//$current.removeClass( rmClasses );
@@ -131,7 +138,6 @@
 				$next.removeClass('inactive').addClass('active');
 				
 			}
-			
 			// fallback
 			if( !this.cssAnimations || !this.cssAnimations ) {
 				
@@ -147,7 +153,7 @@
 					$current.removeClass( 'active' ); 
 				});
 				
-			}
+			}*/
 			
 			this._updatePage();
 			
@@ -250,8 +256,7 @@
 						_self.isAnimating	= false;
 					});
 					
-				}
-				else {
+				} else {
 				
 					this.$el.on( 'webkitTransitionEnd.cslider transitionend.cslider OTransitionEnd.cslider', function( event ) {
 					

@@ -4,12 +4,14 @@
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title> </title>
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title> </title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,700,300,600,400&amp;subset=cyrillic,latin"/>
     <link rel="stylesheet" href="css/main.css"/>
-    <link rel="stylesheet" href="libs/jquery.fancybox/jquery.fancybox.css"/><!--[if lt IE 9]>
+    <link rel="stylesheet" href="libs/jquery.fancybox/jquery.fancybox.css"/>
+    <script src="libs/modernizr/modernizr.min.js"></script><!--[if lt IE 10]>
+    <link rel="stylesheet" href="css/ie.css"/>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"> </script><![endif]-->
   </head>
   <body>
@@ -23,20 +25,21 @@
         <ul class="b-header__menu b-menu">
           <li class="b-menu__item"><a href="#" class="link">Преимущества</a></li>
           <li class="b-menu__item"><a href="#" class="link">Оплата и доставка</a></li>
-          <li class="b-menu__item b-menu__item_order"><a href="#" class="btn btn_danger btn_size_s">Заказать</a></li>
+          <li class="b-menu__item b-menu__item_order"><a href="#" data-create-order="data-create-order" class="btn btn_danger btn_size_s">Заказать</a></li>
           <li class="b-menu__item"><a href="#" class="link">Наши товары</a></li>
           <li class="b-menu__item"><a href="#" class="link">Отзывы</a></li>
         </ul>
         <div class="b-header__contacts b-contacts">
-          <div class="b-contacts__phone"><small>(814)</small> 875-35-89</div><a href="#" class="b-contacts__call btn btn_success btn_size_s">Заказать звонок</a>
+          <div class="b-contacts__phone"><small>(814)</small> 875-35-89</div><a href="#" data-create-order="data-create-order" class="b-contacts__call btn btn_success btn_size_s">Заказать звонок</a>
         </div>
       </div>
     </header>
     <!-- ==== Product slider =============================================================-->
     <div class="b-product-slider">
       <ul class="b-product-slider__slides">
+        <!-- ~~~ Slide 1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <li class="b-product-slider__item da-slide">
-          <div style="background-image: url(img/product-slider/bg-1.png)" class="b-product-slider__item__bg"></div>
+          <div data-bg="img/product-slider/backgrounds/1.png" class="b-product-slider__item__bg"></div>
           <div class="container">
             <div class="b-product-slider__item__main">
               <div class="b-product-slider__item__heading heading_section">Товар 1</div>
@@ -50,11 +53,12 @@
                 <li class="b-product-slider__params__item">Размеры: <strong>S, M, L, X, XL, XLL</strong></li>
               </ul>
             </div>
-            <div class="b-product-slider__item__price">2 950 Р</div><a href="#" class="btn btn_danger btn_size_l b-product-slider__item__order">Заказать</a><img src="img/product-slider/img-1.png" class="b-product-slider__item__image"/>
+            <div class="b-product-slider__item__price">2 950 Р</div><a href="#" data-create-order="data-create-order" data-article="А522" class="btn btn_danger btn_size_l b-product-slider__item__order">Заказать</a><img src="img/product-slider/1.png" class="b-product-slider__item__image"/>
           </div>
         </li>
+        <!-- ~~~ Slide 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <li class="b-product-slider__item da-slide">
-          <div style="background-image: url(img/product-slider/bg-2.png)" class="b-product-slider__item__bg"></div>
+          <div data-bg="img/product-slider/backgrounds/2.png" class="b-product-slider__item__bg"></div>
           <div class="container">
             <div class="b-product-slider__item__main">
               <div class="b-product-slider__item__heading heading_section">Большой красивый товар 2</div>
@@ -65,9 +69,10 @@
                 <li class="b-product-slider__params__item">Размеры: <strong>S, M, L, X, XL, XLL</strong></li>
               </ul>
             </div>
-            <div class="b-product-slider__item__price">1 450 Р</div><a href="#" class="btn btn_danger btn_size_l b-product-slider__item__order">Заказать</a><img src="img/product-slider/img-2.png" class="b-product-slider__item__image"/>
+            <div class="b-product-slider__item__price">1 450 Р</div><a href="#" data-create-order="data-create-order" data-article="А522" class="btn btn_danger btn_size_l b-product-slider__item__order">Заказать</a><img src="img/product-slider/2.png" class="b-product-slider__item__image"/>
           </div>
         </li>
+        <!-- ~~~ Navigation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <nav class="da-arrows"><span class="da-arrows-prev"></span><span class="da-arrows-next"></span></nav>
       </ul>
     </div>
@@ -97,65 +102,18 @@
         <div class="container">
           <div class="b-catalog__heading">Наши товары</div>
           <ul class="b-catalog__filter">
-            <li class="b-catalog__filter__item active">Все товары</li>
-            <li class="b-catalog__filter__item">Мужские</li>
-            <li class="b-catalog__filter__item">Женские</li>
-            <li class="b-catalog__filter__item">Аксесуары</li>
+            <li data-type="all" class="b-catalog__filter__item active">Все товары</li>
+            <li data-type="man" class="b-catalog__filter__item">Мужские</li>
+            <li data-type="woman" class="b-catalog__filter__item">Женские</li>
+            <li data-type="accessory" class="b-catalog__filter__item">Аксесуары</li>
           </ul>
         </div>
       </div>
       <div class="b-catalog__products">
         <div class="container">
-          <div class="b-catalog__products__item b-product-preview">
-            <div class="b-product-preview__image"><img src="img/products/1.jpg"/></div>
-            <div class="b-product-preview__article">Артикул: A123</div>
-            <div class="b-product-preview__price">3450 Р</div><a href="#" class="b-product-preview__buy btn btn_success btn_size_m">Заказать</a>
-          </div>
-          <div class="b-catalog__products__item b-product-preview">
-            <div class="b-product-preview__image"><img src="img/products/1.jpg"/></div>
-            <div class="b-product-preview__article">Артикул: A123</div>
-            <div class="b-product-preview__price">3450 Р</div><a href="#" class="b-product-preview__buy btn btn_success btn_size_m">Заказать</a>
-          </div>
-          <div class="b-catalog__products__item b-product-preview">
-            <div class="b-product-preview__image"><img src="img/products/1.jpg"/></div>
-            <div class="b-product-preview__article">Артикул: A123</div>
-            <div class="b-product-preview__price">3450 Р</div><a href="#" class="b-product-preview__buy btn btn_success btn_size_m">Заказать</a>
-          </div>
-          <div class="b-catalog__products__item b-product-preview">
-            <div class="b-product-preview__image"><img src="img/products/1.jpg"/></div>
-            <div class="b-product-preview__article">Артикул: A123</div>
-            <div class="b-product-preview__price">3450 Р</div><a href="#" class="b-product-preview__buy btn btn_success btn_size_m">Заказать</a>
-          </div>
-          <div class="b-catalog__products__item b-product-preview">
-            <div class="b-product-preview__image"><img src="img/products/1.jpg"/></div>
-            <div class="b-product-preview__article">Артикул: A123</div>
-            <div class="b-product-preview__price">3450 Р</div><a href="#" class="b-product-preview__buy btn btn_success btn_size_m">Заказать</a>
-          </div>
-          <div class="b-catalog__products__item b-product-preview">
-            <div class="b-product-preview__image"><img src="img/products/1.jpg"/></div>
-            <div class="b-product-preview__article">Артикул: A123</div>
-            <div class="b-product-preview__price">3450 Р</div><a href="#" class="b-product-preview__buy btn btn_success btn_size_m">Заказать</a>
-          </div>
-          <div class="b-catalog__products__item b-product-preview">
-            <div class="b-product-preview__image"><img src="img/products/1.jpg"/></div>
-            <div class="b-product-preview__article">Артикул: A123</div>
-            <div class="b-product-preview__price">3450 Р</div><a href="#" class="b-product-preview__buy btn btn_success btn_size_m">Заказать</a>
-          </div>
-          <div class="b-catalog__products__item b-product-preview">
-            <div class="b-product-preview__image"><img src="img/products/1.jpg"/></div>
-            <div class="b-product-preview__article">Артикул: A123</div>
-            <div class="b-product-preview__price">3450 Р</div><a href="#" class="b-product-preview__buy btn btn_success btn_size_m">Заказать</a>
-          </div>
-          <div class="b-catalog__products__item b-product-preview">
-            <div class="b-product-preview__image"><img src="img/products/1.jpg"/></div>
-            <div class="b-product-preview__article">Артикул: A123</div>
-            <div class="b-product-preview__price">3450 Р</div><a href="#" class="b-product-preview__buy btn btn_success btn_size_m">Заказать</a>
-          </div>
-          <div class="b-catalog__products__item b-product-preview">
-            <div class="b-product-preview__image"><img src="img/products/1.jpg"/></div>
-            <div class="b-product-preview__article">Артикул: A123</div>
-            <div class="b-product-preview__price">3450 Р</div><a href="#" class="b-product-preview__buy btn btn_success btn_size_m">Заказать</a>
-          </div>
+          <div data-article="A123" data-type="man" data-price="3450 Р" data-image="img/products/1.jpg" class="b-catalog__products__item b-product-preview"></div>
+          <div data-article="A124" data-type="woman" data-price="3450 Р" data-image="img/products/7.jpg" class="b-catalog__products__item b-product-preview"></div>
+          <div data-article="A127" data-type="man" data-price="3450 Р" data-image="img/products/2.jpg" class="b-catalog__products__item b-product-preview"></div>
         </div>
       </div>
     </div>
@@ -163,13 +121,16 @@
     <div class="b-promo">
       <div class="container">
         <div class="b-promo__wrapper">
-          <form action="#" class="b-order-form b-promo__form">
+          <form action="order.php" class="b-order-form b-promo__form js-form">
             <div class="b-order-form__heading heading_section">Закажи сейчас и получи скидку 5%</div>
-            <input type="text" name="name" placeholder="ФИО" class="form-input b-order-form__name"/>
-            <input type="text" name="phone" placeholder="Телефон" class="form-input b-order-form__phone"/>
-            <input type="text" name="article" placeholder="Артикул" class="form-input b-order-form__article"/>
-            <select name="size" class="form-select b-order-form__size">
+            <input type="text" name="name" placeholder="ФИО" class="form-input b-order-form__field-name"/>
+            <input type="text" name="phone" placeholder="Телефон" class="form-input b-order-form__field-phone"/>
+            <input type="text" name="article" placeholder="Артикул" class="form-input b-order-form__field-article"/>
+            <select name="size" class="form-select b-order-form__field-size">
+              <option value="xs">XS</option>
               <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
             </select>
             <button type="submit" class="btn btn_danger btn_size_m">Заказать</button>
           </form>
@@ -208,21 +169,23 @@
     <div class="b-reviews">
       <div class="container">
         <h2 class="b-reviews__heading heading_section">Отзывы клиентов</h2>
-        <div class="b-reviews__person"><img src="img/reviews/1.jpg" class="b-reviews__person__image"/>
-          <div class="b-reviews__person__name">Максим Новос</div>
-          <p class="b-reviews__person__text">Рационально-критическая парадигма обретает субъект власти.Христианско-демократи <br/> ческий национализм, однако, теоретически символизирует ...</p>
-        </div>
-        <div class="b-reviews__person"><img src="img/reviews/2.jpg" class="b-reviews__person__image"/>
-          <div class="b-reviews__person__name">Максим Новос</div>
-          <p class="b-reviews__person__text">Рационально-критическая парадигма обретает субъект власти.Христианско-демократи <br/> ческий национализм, однако, теоретически символизирует ...</p>
-        </div>
-        <div class="b-reviews__person"><img src="img/reviews/3.jpg" class="b-reviews__person__image"/>
-          <div class="b-reviews__person__name">Максим Новос</div>
-          <p class="b-reviews__person__text">Рационально-критическая парадигма обретает субъект власти.Христианско-демократи <br/> ческий национализм, однако, теоретически символизирует ...</p>
-        </div>
-        <div class="b-reviews__person"><img src="img/reviews/4.jpg" class="b-reviews__person__image"/>
-          <div class="b-reviews__person__name">Максим Новос</div>
-          <p class="b-reviews__person__text">Рационально-критическая парадигма обретает субъект власти.Христианско-демократи <br/> ческий национализм, однако, теоретически символизирует ...</p>
+        <div class="b-reviews__wrapper">
+          <div class="b-reviews__person"><img src="img/reviews/1.jpg" class="b-reviews__person__image"/>
+            <div class="b-reviews__person__name">Максим Новос</div>
+            <p class="b-reviews__person__text">Рационально-критическая парадигма обретает субъект власти.Христианско-демократи <br/> ческий национализм, однако, теоретически символизирует ...</p>
+          </div>
+          <div class="b-reviews__person"><img src="img/reviews/2.jpg" class="b-reviews__person__image"/>
+            <div class="b-reviews__person__name">Максим Новос</div>
+            <p class="b-reviews__person__text">Рационально-критическая парадигма обретает субъект власти.Христианско-демократи <br/> ческий национализм, однако, теоретически символизирует ...</p>
+          </div>
+          <div class="b-reviews__person"><img src="img/reviews/3.jpg" class="b-reviews__person__image"/>
+            <div class="b-reviews__person__name">Максим Новос</div>
+            <p class="b-reviews__person__text">Рационально-критическая парадигма обретает субъект власти.Христианско-демократи <br/> ческий национализм, однако, теоретически символизирует ...</p>
+          </div>
+          <div class="b-reviews__person"><img src="img/reviews/4.jpg" class="b-reviews__person__image"/>
+            <div class="b-reviews__person__name">Максим Новос</div>
+            <p class="b-reviews__person__text">Рационально-критическая парадигма обретает субъект власти.Христианско-демократи <br/> ческий национализм, однако, теоретически символизирует ...</p>
+          </div>
         </div>
       </div>
     </div>
@@ -230,13 +193,16 @@
     <div class="b-promo">
       <div class="container">
         <div class="b-promo__wrapper">
-          <form action="#" class="b-order-form b-promo__form">
+          <form action="order.php" class="b-order-form b-promo__form js-form">
             <div class="b-order-form__heading heading_section">Закажи сейчас и получи скидку 5%</div>
-            <input type="text" name="name" placeholder="ФИО" class="form-input b-order-form__name"/>
-            <input type="text" name="phone" placeholder="Телефон" class="form-input b-order-form__phone"/>
-            <input type="text" name="article" placeholder="Артикул" class="form-input b-order-form__article"/>
-            <select name="size" class="form-select b-order-form__size">
+            <input type="text" name="name" placeholder="ФИО" class="form-input b-order-form__field-name"/>
+            <input type="text" name="phone" placeholder="Телефон" class="form-input b-order-form__field-phone"/>
+            <input type="text" name="article" placeholder="Артикул" class="form-input b-order-form__field-article"/>
+            <select name="size" class="form-select b-order-form__field-size">
+              <option value="xs">XS</option>
               <option value="s">S</option>
+              <option value="m">M</option>
+              <option value="l">L</option>
             </select>
             <button type="submit" class="btn btn_danger btn_size_m">Заказать</button>
           </form>
@@ -257,15 +223,31 @@
         <ul class="b-footer__menu b-menu">
           <li class="b-menu__item"><a href="#" class="link">Преимущества</a></li>
           <li class="b-menu__item"><a href="#" class="link">Оплата и доставка</a></li>
-          <li class="b-menu__item"><a href="#" class="link">Заказать</a></li>
+          <li class="b-menu__item"><a href="#" data-create-order="data-create-order" class="link">Заказать</a></li>
           <li class="b-menu__item"><a href="#" class="link">Наши товары</a></li>
           <li class="b-menu__item"><a href="#" class="link">Отзывы</a></li>
         </ul>
         <div class="b-footer__contacts b-contacts">
-          <div class="b-contacts__phone"><small>(814)</small> 875-35-89</div><a href="#" class="b-contacts__call btn btn_success btn_size_s">Заказать звонок</a>
+          <div class="b-contacts__phone"><small>(814)</small> 875-35-89</div><a href="#" data-create-order="data-create-order" class="b-contacts__call btn btn_success btn_size_s">Заказать звонок</a>
         </div>
       </div>
     </footer>
+    <!-- ==== Order form modal ===========================================================-->
+    <div class="b-modal-form b-modal-form_order">
+      <div class="b-modal-form__heading heading_section">Форма заказа</div>
+      <form action="order.php" class="b-modal-form__wrapper js-form">
+        <input type="text" name="name" placeholder="ФИО" class="form-input b-modal-form__field-name"/>
+        <input type="text" name="phone" placeholder="Телефон" class="form-input b-modal-form__field-phone"/>
+        <input type="text" name="article" placeholder="Артикул" class="form-input b-modal-form__field-article"/>
+        <select name="size" class="form-select b-modal-form__field-size">
+          <option value="xs">XS</option>
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="l">L</option>
+        </select>
+        <button type="submit" class="btn btn_danger btn_size_m b-modal-form__order">Заказать</button>
+      </form>
+    </div>
     <!-- ==== Scripts ==================================================================== -->
     <script src="libs/jquery/jquery.min.js"></script>
     <script src="libs/jquery.placeholder/jquery.placeholder.min.js"></script>
