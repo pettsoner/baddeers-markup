@@ -135,6 +135,7 @@ html {
   font-size: 100%;
 }
 body {
+  padding-top: 100px;
   min-width: 980px;
   background: #fff;
   font-family: 'Open Sans', sans-serif;
@@ -418,7 +419,14 @@ a {
   width: 390px;
 }
 .b-header {
+  width: 100%;
   height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 8000;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
 .b-header:before,
 .b-header:after {

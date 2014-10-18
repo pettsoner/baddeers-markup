@@ -23,14 +23,14 @@
           <p class="b-slogan__text">Только лучшие товары</p>
         </div>
         <ul class="b-header__menu b-menu">
-          <li class="b-menu__item"><a href="#" class="link">Преимущества</a></li>
-          <li class="b-menu__item"><a href="#" class="link">Оплата и доставка</a></li>
-          <li class="b-menu__item b-menu__item_order"><a href="#" data-create-order="data-create-order" class="btn btn_danger btn_size_s">Заказать</a></li>
-          <li class="b-menu__item"><a href="#" class="link">Наши товары</a></li>
-          <li class="b-menu__item"><a href="#" class="link">Отзывы</a></li>
+          <li class="b-menu__item"><a href="#" data-scroll=".b-benefits" class="link">Преимущества</a></li>
+          <li class="b-menu__item"><a href="#" data-scroll=".b-steps" class="link">Оплата и доставка</a></li>
+          <li class="b-menu__item b-menu__item_order"><a href="#" data-open-modal="order" class="btn btn_danger btn_size_s">Заказать</a></li>
+          <li class="b-menu__item"><a href="#" data-scroll=".b-catalog" class="link">Наши товары</a></li>
+          <li class="b-menu__item"><a href="#" data-scroll=".b-reviews" class="link">Отзывы</a></li>
         </ul>
         <div class="b-header__contacts b-contacts">
-          <div class="b-contacts__phone"><small>(814)</small> 875-35-89</div><a href="#" data-create-order="data-create-order" class="b-contacts__call btn btn_success btn_size_s">Заказать звонок</a>
+          <div class="b-contacts__phone"><small>(814)</small> 875-35-89</div><a href="#" data-open-modal="call" class="b-contacts__call btn btn_success btn_size_s">Заказать звонок</a>
         </div>
       </div>
     </header>
@@ -53,7 +53,7 @@
                 <li class="b-product-slider__params__item">Размеры: <strong>S, M, L, X, XL, XLL</strong></li>
               </ul>
             </div>
-            <div class="b-product-slider__item__price">2 950 Р</div><a href="#" data-create-order="data-create-order" data-article="А522" class="btn btn_danger btn_size_l b-product-slider__item__order">Заказать</a><img src="img/product-slider/1.png" class="b-product-slider__item__image"/>
+            <div class="b-product-slider__item__price">2 950 Р</div><a href="#" data-open-modal="order" data-article="А522" class="btn btn_danger btn_size_l b-product-slider__item__order">Заказать</a><img src="img/product-slider/1.png" class="b-product-slider__item__image"/>
           </div>
         </li>
         <!-- ~~~ Slide 2 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -69,7 +69,7 @@
                 <li class="b-product-slider__params__item">Размеры: <strong>S, M, L, X, XL, XLL</strong></li>
               </ul>
             </div>
-            <div class="b-product-slider__item__price">1 450 Р</div><a href="#" data-create-order="data-create-order" data-article="А522" class="btn btn_danger btn_size_l b-product-slider__item__order">Заказать</a><img src="img/product-slider/2.png" class="b-product-slider__item__image"/>
+            <div class="b-product-slider__item__price">1 450 Р</div><a href="#" data-open-modal="order" data-article="А522" class="btn btn_danger btn_size_l b-product-slider__item__order">Заказать</a><img src="img/product-slider/2.png" class="b-product-slider__item__image"/>
           </div>
         </li>
         <!-- ~~~ Navigation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -223,12 +223,12 @@
         <ul class="b-footer__menu b-menu">
           <li class="b-menu__item"><a href="#" class="link">Преимущества</a></li>
           <li class="b-menu__item"><a href="#" class="link">Оплата и доставка</a></li>
-          <li class="b-menu__item"><a href="#" data-create-order="data-create-order" class="link">Заказать</a></li>
+          <li class="b-menu__item"><a href="#" data-open-modal="order" class="link">Заказать</a></li>
           <li class="b-menu__item"><a href="#" class="link">Наши товары</a></li>
           <li class="b-menu__item"><a href="#" class="link">Отзывы</a></li>
         </ul>
         <div class="b-footer__contacts b-contacts">
-          <div class="b-contacts__phone"><small>(814)</small> 875-35-89</div><a href="#" data-create-order="data-create-order" class="b-contacts__call btn btn_success btn_size_s">Заказать звонок</a>
+          <div class="b-contacts__phone"><small>(814)</small> 875-35-89</div><a href="#" data-open-modal="call" class="b-contacts__call btn btn_success btn_size_s">Заказать звонок</a>
         </div>
       </div>
     </footer>
@@ -245,6 +245,16 @@
           <option value="m">M</option>
           <option value="l">L</option>
         </select>
+        <button type="submit" class="btn btn_danger btn_size_m b-modal-form__order">Заказать</button>
+      </form>
+    </div>
+    <!-- ==== Call form modal ============================================================-->
+    <div class="b-modal-form b-modal-form_call">
+      <div class="b-modal-form__heading heading_section">Заказать звонок</div>
+      <form action="order.php" class="b-modal-form__wrapper js-form">
+        <input type="text" name="name" placeholder="ФИО" class="form-input"/>
+        <input type="text" name="email" placeholder="E-mail" class="form-input"/>
+        <input type="text" name="phone" placeholder="Телефон" class="form-input"/>
         <button type="submit" class="btn btn_danger btn_size_m b-modal-form__order">Заказать</button>
       </form>
     </div>

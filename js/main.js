@@ -2,6 +2,17 @@ $(document).ready(function() {
 
     $('input, textarea').placeholder();
 
+    /* Скролл
+    ------------------------------------------------------------------------------- */
+
+    $('[data-scroll]').click(function(e) {
+        $('html, body').animate({
+          scrollTop: $($(this).data('scroll')).offset().top - 100
+        }, 1000);
+
+        e.preventDefault();
+    });
+
     /* Всплывающие окна
     ------------------------------------------------------------------------------- */
 
@@ -49,7 +60,7 @@ $(document).ready(function() {
             .append('<a href="#" class="b-product-preview__image"><img src="' + $this.data('image') + '"></a>')
             .append('<div class="b-product-preview__article">Артикул: ' + $this.data('article') + '</div>')
             .append('<div class="b-product-preview__price">' + $this.data('price') + '</div>')
-            .append('<a href="#" class="b-product-preview__order btn btn_success btn_size_m" data-create-order data-article="' + $this.data('article') + '">Заказать</a>')
+            .append('<a href="#" class="b-product-preview__order btn btn_success btn_size_m" data-open-modal="order" data-article="' + $this.data('article') + '">Заказать</a>')
     });
 
     /* Установка фонового изображения
@@ -64,14 +75,24 @@ $(document).ready(function() {
     /* Окно заказа
     ------------------------------------------------------------------------------- */
 
-    $(document).on('click', '[data-create-order]', function() {
+    $(document).on('click', '[data-open-modal]', function() {
+        var $this = $(this);
 
-        var $orderForm = $('.b-modal-form_order').clone();
-        if ($orderForm) {
-            $orderForm.find('[name="article"]').val($(this).data('article'));
+        if ($this.data('open-modal') == 'order') {
+
+            var $modal = $('.b-modal-form_order').clone();
+
+            if ($this.data('article')) {
+                $modal.find('[name="article"]').val($this.data('article'));
+            }
+
+        } else if ($this.data('open-modal') == 'call') {
+
+            var $modal = $('.b-modal-form_call').clone();
+
         }
-        $.fancybox($orderForm);
-
+        
+        $.fancybox($modal);
     });
 
     /* Слайдер продуктов
@@ -79,7 +100,25 @@ $(document).ready(function() {
 
     $('.b-product-slider__slides').cslider();
 
+    /* Обработка отправки форм
+    ------------------------------------------------------------------------------- */
+
     $(document).on('submit', '.js-form', function(e) {
+        var $this = $(this);
+
+        $.post($this.attr('action'), $this.serialize(), function(response) {
+
+            if (response.error) {
+
+                alert(response.error);
+
+            } else {
+
+                
+            }
+
+        }, 'json');
+
         e.preventDefault();
     });
 
